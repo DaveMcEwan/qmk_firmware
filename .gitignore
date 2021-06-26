@@ -60,6 +60,7 @@ doxygen/
 .vscode/ipch/
 .stfolder
 .tags
+venv*
 
 # ignore image files
 *.png
