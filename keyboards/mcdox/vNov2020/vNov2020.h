@@ -19,8 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "quantum.h"
 
-/** Map from visual position (k<row><col>) to logical position in matrix.
-Visual layout in keymap.c has 5 rows, 16 colunms.
+/** Map from visual position (c<col>r<row>) to logical position in matrix.
+Visual layout in keymap.c has 2 times 5 rows by 8 colunms.
 Logical layout has 10 rows, 8 columns.
 These differences are influenced by PCB design:
 1. Having the number of rows as close as possible to the number of colunms
