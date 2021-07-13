@@ -39,7 +39,7 @@ https://raw.githubusercontent.com/openmoko/openmoko-usb-oui/master/usb_product_i
 #define UNUSED_PINS
 
 /* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION ROW2COL
+#define DIODE_DIRECTION COL2ROW
 
 /* https://docs.qmk.fm/#/feature_debounce_type */
 #define DEBOUNCE 5
