@@ -30,7 +30,7 @@ https://raw.githubusercontent.com/openmoko/openmoko-usb-oui/master/usb_product_i
 #define PRODUCT_ID      0x0000
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    DaveMcEwan
-#define PRODUCT         mcdoxDec2014
+#define PRODUCT         mcdox/vDec2014-QMK
 
 #define MATRIX_ROWS 14
 #define MATRIX_COLS 6
