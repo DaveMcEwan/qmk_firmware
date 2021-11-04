@@ -17,7 +17,31 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 
-#define MAC0 SEND_STRING("Hello World!")
+enum custom_keycodes {
+	MAC0 = SAFE_RANGE,
+	MAC1,
+};
+
+bool process_record_user (uint16_t keycode, keyrecord_t *record) {
+	switch (keycode) {
+	case MAC0:
+		if (record->event.pressed) {
+			SEND_STRING("Hello MAC0!");
+		} else {
+			// released
+		}
+		break;
+	case MAC1:
+		if (record->event.pressed) {
+			SEND_STRING("Hello MAC1!");
+		} else {
+			// released
+		}
+		break;
+	}
+	return true;
+};
+
 
 /**
 Layer0: Dvorak
@@ -53,7 +77,7 @@ Layer1: Fn, mouse, misc
   |      |      |      |      |      |                                       |MsLft | MsUp | MsDn |MsRgt |      |
   `----------------------------------'                                       `----------------------------------'
                                        ,-------------.       ,-------------.
-                                       | MAC0 |      |       |      |      |
+                                       | MAC0 | MAC1 |       |      |      |
                                 ,------|------|------|       |------+------+------.
                                 |      |      |      |       |      |      |      |
                                 |      |      |------|       |------|      |      |
@@ -106,7 +130,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______ , _______ , _______ , _______ , _______ , _______ ,
     _______ , _______ , _______ , _______ , _______ , _______ , KC_INS  ,
     _______ , _______ , _______ , _______ , _______ ,
-                                                            KC_NO   , _______ ,
+                                                            MAC0    , MAC1    ,
                                                                       _______ ,
                                                   _______ , _______ , KC_NO   ,
 
